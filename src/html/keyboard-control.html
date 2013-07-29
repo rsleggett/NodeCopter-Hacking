@@ -1,0 +1,32 @@
+<html>
+<head>
+<!-- on the client -->
+<script src="scripts/jquery-1.10.2.min.js"></script>
+<script>
+	$(function() { 
+		$('.control').click(function() { 
+			var action = $(this).data('action');
+			$.get('http://localhost:5556/' + action ,function(data) { $('.status').text(data); });
+			return false;
+		});
+		
+		setInterval(2000, function() { 
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Drone control</h1>
+	<h2 class="status"></h2>
+	<a href="#" class="control" data-action="take-off">Take off</a>
+	<a href="#" class="control" data-action="land">Land</a>
+	<a href="#" class="control" data-action="up">Up</a>
+	<a href="#" class="control" data-action="down">Down</a>
+	<a href="#" class="control" data-action="left">Left</a>
+	<a href="#" class="control" data-action="right">Right</a>
+	<a href="#" class="control" data-action="front">Front</a>
+	<a href="#" class="control" data-action="back">Back</a>
+	<a href="#" class="control" data-action="disable-emergency">Disable Emergency</a>
+</html>
+</body>
